@@ -2533,3 +2533,20 @@ body {
   position: relative;
   z-index: 1; /* નેવબારની પાછળ રહે */
 }
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;   /* reduce gap */
+  margin-bottom: 8px;
+}
+
+.bullet-dot {
+  font-size: 16px;
+  line-height: 1;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.feature-item span {
+  line-height: 1.4;
+}
