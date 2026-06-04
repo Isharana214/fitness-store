@@ -2550,3 +2550,26 @@ body {
 .feature-item span {
   line-height: 1.4;
 }
+.mobile-tabs {
+    display: flex;
+    flex-direction: column; /* આનાથી બટન એકબીજાની નીચે આવશે */
+    gap: 10px;              /* બટનો વચ્ચે યોગ્ય જગ્યા રાખશે */
+}
+
+.mobile-tabs button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid #333;
+    text-align: left;       /* લખાણને ડાબી બાજુ રાખવા માટે */
+    margin: 0;              /* માર્જિન 0 કરો જેથી જગ્યા વધે નહીં */
+}
+/* આ CSS તમારી ફાઈલમાં ઉમેરો */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* મોબાઈલ પર નેવબારના મેનુ બટન્સ છુપાવી દો */
+  }
+}
