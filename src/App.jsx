@@ -468,8 +468,6 @@ const FitnessLink = ({ children, url }) => {
   GET APP
 </button>
     
-    {/* અપડેટેડ લોજિક વાળો પ્રોફાઇલ આઈકોન */}
-{/* નેવબારમાં પ્રોફાઇલ આઈકોન */}
 <div 
   onClick={() => {
     // અહિયાં સીધું PROFILE ટેબ સેટ કરો
