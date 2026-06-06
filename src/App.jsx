@@ -410,6 +410,29 @@ const FitnessLink = ({ children, url }) => {
     </a>
   );
 };
+const JoinButton = () => {
+  return (
+    <button 
+      onClick={() => window.open('https://wa.me/919106047691', '_blank')}
+      style={{
+        background: '#ff4500',
+        padding: '15px 30px',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        fontSize: '16px',
+        fontWeight: 'bold',
+        transition: '0.3s',
+        marginTop: '10px'
+      }}
+      onMouseOver={(e) => e.target.style.background = '#e63e00'}
+      onMouseOut={(e) => e.target.style.background = '#ff4500'}
+    >
+      JOIN NOW VIA WHATSAPP
+    </button>
+  );
+};
  return (
   
   <div>

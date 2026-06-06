@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import toast, { Toaster } from 'react-hot-toast';
 import product1 from "./assets/images/product1.jpg";
 import product2 from "./assets/images/product2.jpg";
 import product3 from "./assets/images/product3.jpg";
@@ -65,7 +65,7 @@ import cycle5 from "./assets/images/cycle5.jpg";
 const FitnessStore = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [cart, setCart] = useState([]);
-  const [message, setMessage] = useState("");
+ 
 
   const products = [
   { id: 101, title: "Classic Tee", category: "T-shirts", price: 499, img: product1 },
@@ -178,8 +178,15 @@ const FitnessStore = () => {
 
   const addToCart = (product) => {
     setCart([...cart, product]);
-    setMessage(`✅ ${product.title} has been added to your cart!`);
-    setTimeout(() => setMessage(""), 3000);
+    
+    // અહીં મેસેજ ઇંગ્લિશમાં છે
+    toast.success(`${product.title} has been added to your cart!`, {
+      style: {
+        background: '#333',
+        color: '#fff',
+        borderRadius: '10px',
+      },
+    });
   };
 
   const totalAmount = cart.reduce((total, item) => total + item.price, 0);
@@ -187,12 +194,13 @@ const FitnessStore = () => {
 
   return (
     <div style={{ backgroundColor: '#121212', color: '#fff', minHeight: '100vh', padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <Toaster position="top-right" />
       <h1 style={{ textAlign: 'center', color: '#ff4500' }}>ELITE FITNESS STORE</h1>
 
       <div style={{ background: '#1e1e1e', padding: '20px', borderRadius: '10px', textAlign: 'center', marginBottom: '20px', border: '1px solid #444', color: '#fff' }}>
         <h2 style={{ margin: '0', color: '#fff' }}>🛒 Total items in your cart: {cart.length}</h2>
         <h3 style={{ margin: '10px 0 0', color: '#ff4500' }}>Total Amount: ₹{totalAmount}</h3>
-        {message && <p style={{ color: '#00ff00', fontWeight: 'bold', marginTop: '10px' }}>{message}</p>}
+        
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '30px', flexWrap: 'wrap' }}>
