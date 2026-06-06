@@ -212,8 +212,13 @@ const FitnessStore = () => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', maxWidth: '1200px', margin: 'auto' }}>
         {products.filter(p => selectedCategory === "All" || p.category === selectedCategory).map(p => (
           <div key={p.id} style={{ background: '#1e1e1e', padding: '15px', borderRadius: '10px', border: '1px solid #444' }}>
-            <img src={p.img} alt={p.title} style={{ width: '100%', height: '180px', borderRadius: '5px', objectFit: 'cover' }} />
-            <h3 style={{ margin: '15px 0 5px' }}>{p.title}</h3>
+         
+<img 
+  src={p.img || 'https://via.placeholder.com/150'} 
+  alt={p.title} 
+  onError={(e) => { e.target.src = 'https://via.placeholder.com/150'; }} // જો ઈમેજ લોડ ન થાય તો placeholder બતાવશે
+  style={{ width: '100%', height: '180px', borderRadius: '5px', objectFit: 'cover' }} 
+/>
             <p style={{ fontSize: '1.1rem', color: '#aaa' }}>₹{p.price}</p>
             <button onClick={() => addToCart(p)} style={{ width: '100%', padding: '10px', background: '#ff4500', border: 'none', color: '#fff', borderRadius: '5px', cursor: 'pointer', fontWeight: 'bold' }}>ADD TO CART</button>
           </div>
